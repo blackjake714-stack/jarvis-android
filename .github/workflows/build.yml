@@ -14,7 +14,7 @@ jobs:
 
       - name: Unzip uploaded project
         run: |
-          ZIP_FILE=$(find . -maxdepth 1 -iname "*.zip" | head -n1)
+          ZIP_FILE=$(ls -t *.zip | head -n1)
           echo "Found: $ZIP_FILE"
           unzip -o "$ZIP_FILE" -d extracted
 
