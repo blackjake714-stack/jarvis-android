@@ -1,4 +1,4 @@
-name: Build JARVIS APKname:
+name: Build JARVIS APKname
 
 on:
   push:
