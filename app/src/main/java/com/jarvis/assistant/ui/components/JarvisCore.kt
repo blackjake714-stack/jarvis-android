@@ -97,12 +97,3 @@ fun JarvisCore(
         )
     }
 }
-
-private fun androidx.compose.ui.graphics.drawscope.DrawScope.rotate(
-    degrees: Float,
-    block: androidx.compose.ui.graphics.drawscope.DrawScope.() -> Unit
-) = androidx.compose.ui.graphics.drawscope.rotate(
-    degrees = degrees,
-    pivot = Offset(size.width / 2f, size.height / 2f),
-    block = block
-)
