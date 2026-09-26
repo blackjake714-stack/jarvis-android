@@ -14,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.graphics.drawscope.rotate
 import androidx.compose.ui.unit.dp
 import com.jarvis.assistant.ui.AssistantState
 import com.jarvis.assistant.ui.theme.JarvisAmberAlert
@@ -62,7 +63,7 @@ fun JarvisCore(
         val center = Offset(size.width / 2f, size.height / 2f)
         val baseRadius = size.minDimension / 2f * 0.6f
 
-        rotate(rotation) {
+        rotate(degrees = rotation, pivot = center) {
             drawCircle(
                 color = JarvisCyanDim,
                 radius = baseRadius + 26f,
@@ -97,11 +98,3 @@ fun JarvisCore(
         )
     }
 }
-private fun androidx.compose.ui.graphics.drawscope.DrawScope.rotate(
-    degrees: Float,
-    block: androidx.compose.ui.graphics.drawscope.DrawScope.() -> Unit
-) = androidx.compose.ui.graphics.drawscope.rotate(
-    degrees = degrees,
-    pivot = Offset(size.width / 2f, size.height / 2f),
-    block = block
-)
